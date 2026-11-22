@@ -170,3 +170,203 @@ h2 { font-size: clamp(38px,5vw,58px); }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
+
+/* PREMIUM PROJECT SHOWCASE */
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 45px;
+}
+
+.showcase-card {
+  min-width: 0;
+}
+
+.showcase-featured {
+  grid-column: span 2;
+}
+
+.showcase-preview {
+  position: relative;
+  min-height: 330px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 12px;
+  padding: 26px;
+  transition: transform .35s ease, border-color .35s ease;
+}
+
+.showcase-card:hover .showcase-preview {
+  transform: translateY(-5px);
+  border-color: rgba(110,150,255,.5);
+}
+
+.showcase-featured .showcase-preview {
+  min-height: 400px;
+}
+
+.preview-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.preview-nav span {
+  font-size: 9px;
+  opacity: .7;
+}
+
+.preview-number {
+  position: absolute;
+  right: 25px;
+  bottom: 18px;
+  font-size: 12px;
+  opacity: .5;
+}
+
+.restaurant-preview {
+  background:
+    radial-gradient(ellipse at 75% 75%, rgba(180,115,70,.4), transparent 45%),
+    linear-gradient(125deg, #22201d, #51402f);
+  color: #fff4e7;
+}
+
+.restaurant-content {
+  position: relative;
+  margin-top: 65px;
+  z-index: 1;
+}
+
+.restaurant-content > span:first-child,
+.bakery-content > span:first-child,
+.barber-content > span:first-child {
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.restaurant-content h3,
+.bakery-content h3,
+.barber-content h3 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(34px, 5vw, 62px);
+  line-height: 1.05;
+  margin: 16px 0;
+}
+
+.restaurant-content h3 i {
+  color: #e6b98a;
+}
+
+.restaurant-content p,
+.barber-content p {
+  font-size: 12px;
+  opacity: .7;
+}
+
+.preview-button,
+.bakery-button,
+.barber-button {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 11px 16px;
+  border: 1px solid currentColor;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.bakery-preview {
+  background: linear-gradient(140deg, #f8e9dd, #dfb6a5);
+  color: #573b35;
+}
+
+.bakery-content {
+  margin-top: 55px;
+  position: relative;
+  z-index: 2;
+}
+
+.bakery-content h3 i {
+  color: #a45d69;
+}
+
+.bakery-decoration {
+  position: absolute;
+  right: 35px;
+  bottom: 20px;
+  font-size: 130px;
+  color: rgba(130,75,70,.2);
+}
+
+.barber-preview {
+  background:
+    radial-gradient(ellipse at 80% 80%, rgba(176,132,69,.3), transparent 45%),
+    #171716;
+  color: #e9d4ae;
+}
+
+.barber-content {
+  margin-top: 55px;
+}
+
+.barber-content h3 i {
+  color: #c59b5d;
+}
+
+.showcase-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 2px;
+  gap: 12px;
+}
+
+.showcase-category {
+  font-size: 9px;
+  letter-spacing: 1.4px;
+  color: #8e9ac5;
+}
+
+.showcase-info h3 {
+  font-size: 19px;
+  margin: 8px 0;
+}
+
+.showcase-info p {
+  font-size: 12px;
+  color: #92929e;
+}
+
+.showcase-arrow {
+  font-size: 22px;
+  color: #9c9cff;
+}
+
+@media (max-width: 650px) {
+  .showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .showcase-featured {
+    grid-column: span 1;
+  }
+
+  .showcase-preview,
+  .showcase-featured .showcase-preview {
+    min-height: 310px;
+    padding: 20px;
+  }
+
+  .restaurant-content {
+    margin-top: 55px;
+  }
+
+  .preview-nav span {
+    font-size: 7px;
+  }
+}
